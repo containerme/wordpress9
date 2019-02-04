@@ -23,9 +23,9 @@ This is a briefly list of the necessary requirements before trying run the templ
 Easy and fast deployment in few steps:
 
 ```
-$ git clone https://github.com/alezzandro/wordpress-inmyopenshift-cloud.git
+$ git clone https://github.com/containerme/wordpress9.git
 
-$ cd wordpress-inmyopenshift-cloud
+$ cd wordpress9
 
 $ oc create -f wordpress-openshift-template.yaml
 
