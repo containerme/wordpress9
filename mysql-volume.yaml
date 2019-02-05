@@ -1,0 +1,13 @@
+piVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-volume
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /DATA/OSE_mysql
+    server: workstation.lab.example.com
+  persistentVolumeReclaimPolicy: Recycle

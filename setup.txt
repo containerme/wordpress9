@@ -1,0 +1,35 @@
+import image:
+
+[root@master ~]#
+
+import image:
+
+yum -y install wget                                              
+wget http://e4u211/EX280/wordpress.tar                           
+docker load -i wordpress.tar                                     
+docker images                                                     
+docker tag 6e880d17852f workstation.lab.example.com:5000/wordpress
+docker push workstation.lab.example.com:5000/wordpress 
+
+
+[root@workstation ~]# 
+
+oc create -f mysql-volume.yaml
+oc create -f mysql-pvclaim.yaml
+
+oc create -f wordpress-volume.yaml
+oc create -f wordpress-pvclaim.yaml
+
+
+
+oc create -f mysql-pod.yaml
+oc create -f mysql-service.yaml
+
+oc create -f wordpress-pod.yaml
+oc create -f wordpress-service.yaml
+
+
+oc expose service wpfrontend --name=wordpressroute --hostname=wp-default.apps.lab.example.com --port=80
+
+test in brower:
+http://wp-default.apps.lab.example.com

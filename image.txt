@@ -1,0 +1,5 @@
+#on master import image:
+wget http://rhgls.lab9.example.com/ex280/wordpress.tar  #we should use online docker to save a image like: docker save wordpress &gt; wordpress.tar
+docker load -i wordpress.tar
+docker tag docker.io/wordpress workstation.lab.example.com:5000/openshift3/wordpress
+docker push workstation.lab.example.com:5000/openshift3/wordpress

@@ -1,0 +1,13 @@
+piVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wp-volume
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /DATA/OSE_wordpress
+    server: workstation.lab.example.com
+  persistentVolumeReclaimPolicy: Recycle
